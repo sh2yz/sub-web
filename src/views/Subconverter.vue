@@ -255,7 +255,7 @@ export default {
           ClashR: "clashr",
           Surge2: "surge&ver=2",
         },
-        backendOptions: [{ value: "https://sub.yz-sh.pp.ua/sub?" }],
+        backendOptions: [{ value: "https://sub.yz-sh.workers.dev/sub?" }],
         remoteConfig: [
         {
             label: "ACL4SSR",
