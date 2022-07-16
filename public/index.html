@@ -1,52 +1,316 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="stylesheet" href="setting/setting.css">
-    <link rel="stylesheet" href="https://sub.tsutsu.cc/css/theme.css">
-    <title>つつの订阅转换</title>
-    <!-- 这里你可以自行修改 -->
-    <meta name="keywords" content="Clash,订阅转换,订阅,转换,转换魔改,魔改,ACL4SSR,在线订阅转换,Clash在线订阅转换,在线订阅转换" />
-    <meta name="description" content="拥有贼好看的主题,几乎全网做好用的后端,优质规则の在线订阅转换" />
-<style>
-.loading-div{height: 100%; z-index: 0; background: #182742} .sk-chase{width: 60px; height: 60px; position: absolute; left:0; top:0; right:0; bottom:0; margin:auto; animation: sk-chase 2.5s infinite linear both;}.sk-chase-dot{width: 100%; height: 100%; position: absolute; left: 0; top: 0; animation: sk-chase-dot 2.0s infinite ease-in-out both;}.sk-chase-dot:before{content: ''; display: block; width: 25%; height: 25%; background-color: rgb(222,222,222); border-radius: 100%; animation: sk-chase-dot-before 2.0s infinite ease-in-out both;}.sk-chase-dot:nth-child(1){animation-delay: -1.1s;}.sk-chase-dot:nth-child(2){animation-delay: -1.0s;}.sk-chase-dot:nth-child(3){animation-delay: -0.9s;}.sk-chase-dot:nth-child(4){animation-delay: -0.8s;}.sk-chase-dot:nth-child(5){animation-delay: -0.7s;}.sk-chase-dot:nth-child(6){animation-delay: -0.6s;}.sk-chase-dot:nth-child(1):before{animation-delay: -1.1s;}.sk-chase-dot:nth-child(2):before{animation-delay: -1.0s;}.sk-chase-dot:nth-child(3):before{animation-delay: -0.9s;}.sk-chase-dot:nth-child(4):before{animation-delay: -0.8s;}.sk-chase-dot:nth-child(5):before{animation-delay: -0.7s;}.sk-chase-dot:nth-child(6):before{animation-delay: -0.6s;}@keyframes sk-chase{100%{transform: rotate(360deg);} }@keyframes sk-chase-dot{80%, 100%{transform: rotate(360deg);} }@keyframes sk-chase-dot-before{50%{transform: scale(0.4);} 100%, 0%{transform: scale(1.0);} }video#bgvid{position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -100; -ms-transform: translateX(-50%) translateY(-50%); -moz-transform: translateX(-50%) translateY(-50%); -webkit-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); background: url(bg.png) no-repeat; background-size: cover;}
+ <style>
+/* 屏幕适配 */
+@media only screen and (min-width: 1200px) {
+.ui.container {
+width: 80% !important;
+}
+}
+ 
+@media only screen and (max-width: 767px) {
+.ui.card>.content>.header:not(.ui), .ui.cards>.card>.content>.header:not(.ui) {
+    margin-top: 0.4em !important;
+}
+}
+ 
+/* 整体图标 */
+i.icon {
+color: #000;
+width: 1.2em !important;
+}
+ 
+/* 背景图片 */
+body {
+content: " " !important;
+background: fixed !important;
+z-index: -1 !important;
+top: 0 !important;
+right: 0 !important;
+bottom: 0 !important;
+left: 0 !important;
+background-position: top !important;
+background-repeat: no-repeat !important;
+background-size: cover !important;
+background-image: url(https://pic1.zhimg.com/v2-c9371439a52caf61aa9422ff92017be9_r.jpg?source=c8b7c179) !important;
+font-family: Arial,Helvetica,sans-serif !important;
+}
+ 
+/* 导航栏 */
+.ui.large.menu {
+border: 0 !important;
+border-radius: 0px !important;
+background-color: rgba(255, 255, 255, 55%) !important;
+}
+ 
+/* 首页按钮 */
+.ui.menu .active.item {
+background-color: transparent !important;
+}
+ 
+/* 导航栏下拉框 */
+.ui.dropdown .menu {
+border: 0 !important;
+border-radius: 0 !important;
+background-color: rgba(255, 255, 255, 80%) !important;
+}
+ 
+/* 登陆按钮 */
+.nezha-primary-btn {
+background-color: transparent !important;
+color: #000 !important;
+}
+ 
+/* 大卡片 */
+#app .ui.fluid.accordion {
+background-color: #fbfbfb26 !important;
+border-radius: 0.4rem !important;
+}
+ 
+/* 小卡片 */
+.ui.four.cards>.card {
+border-radius: 0.6rem !important;
+background-color: #fafafaa3 !important;
+}
+ 
+.status.cards .wide.column {
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+height: 3.3rem !important;
+}
+ 
+.status.cards .three.wide.column {
+padding-right: 0rem !important;
+}
+ 
+.status.cards .wide.column:nth-child(1) {
+margin-top: 2rem !important;
+}
+ 
+.status.cards .wide.column:nth-child(2) {
+margin-top: 2rem !important;
+}
+ 
+.status.cards .description {
+padding-bottom: 0 !important;
+}
+ 
+/* 小鸡名 */
+.status.cards .flag {
+margin-right: 0.5rem !important;
+}
+ 
+/* 弹出卡片图标 */
+.status.cards .header > .info.icon {
+margin-right: 0 !important;
+}
+ 
+.nezha-secondary-font {
+color: #21ba45 !important;
+}
+ 
+/* 进度条 */
+.ui.progress {
+border-radius: 50rem !important;
+}
+ 
+.ui.progress .bar {
+min-width: 1.8em !important;
+border-radius: 15px !important;
+line-height: 1.65em !important;
+}
+ 
+.ui.fine.progress> .bar {
+background-color: #21ba45 !important;
+}
+ 
+.ui.progress> .bar {
+background-color: #000 !important;
+}
+ 
+.ui.progress.fine .bar {
+background-color: #21ba45 !important;
+}
+ 
+.ui.progress.warning .bar {
+background-color: #ff9800 !important;
+}
+ 
+.ui.progress.error .bar {
+background-color: #e41e10 !important;
+}
+ 
+.ui.progress.offline .bar {
+background-color: #000 !important;
+}
+ 
+/* 上传下载 */
+.status.cards .outline.icon {
+margin-right: 1px !important;
+}
+ 
+ 
+i.arrow.alternate.circle.down.outline.icon
+{
+color: #21ba45 !important;
+}
+i.arrow.alternate.circle.up.outline.icon
+ 
+ 
+{
+color: red !important;
+}
+ 
+/* 弹出卡片小箭头 */
+.ui.right.center.popup {
+margin: -3px 0 0 0.914286em !important;
+-webkit-transform-origin: left 50% !important;
+transform-origin: left 50% !important;
+}
+ 
+.ui.bottom.left.popup {
+margin-left: 1px !important;
+margin-top: 3px !important;
+}
+ 
+.ui.top.left.popup {
+margin-left: 0 !important;
+margin-bottom: 10px !important;
+}
+ 
+.ui.top.right.popup {
+margin-right: 0 !important;
+margin-bottom: 8px !important;
+}
+ 
+.ui.left.center.popup {
+margin: -3px .91428571em 0 0 !important;
+-webkit-transform-origin: right 50% !important;
+transform-origin: right 50% !important;
+}
+ 
+.ui.right.center.popup:before,
+.ui.left.center.popup:before {
+border: 0px solid #fafafaeb !important;
+background: #fafafaeb !important;
+}
+ 
+.ui.top.popup:before {
+border-color: #fafafaeb transparent transparent !important;
+}
+ 
+.ui.popup:before {
+border-color: #fafafaeb transparent transparent !important;
+}
+ 
+.ui.bottom.left.popup:before {
+border-radius: 0 !important;
+border: 1px solid transparent !important;
+border-color: #fafafaeb transparent transparent !important;
+background: #fafafaeb !important;
+-webkit-box-shadow: 0px 0px 0 0 
+#fafafaeb !important;
+box-shadow: 0px 0px 0 0 #fafafaeb !important;
+-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+ 
+.ui.bottom.right.popup:before {
+border-radius: 0 !important;
+border: 1px solid transparent !important;
+border-color: #fafafaeb transparent transparent !important;
+background: #fafafaeb !important
+-webkit-box-shadow: 0px 0px 0 0 #fafafaeb !important;
+box-shadow: 0px 0px 0 0 #fafafaeb !important;
+-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+ 
+.ui.top.left.popup:before {
+border-radius: 0 !important;
+border: 1px solid transparent !important;
+border-color: #fafafaeb transparent transparent !important;
+background: #fafafaeb !important;
+-webkit-box-shadow: 0px 0px 0 0 #fafafaeb !important;
+box-shadow: 0px 0px 0 0 #fafafaeb !important;
+-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+ 
+.ui.top.right.popup:before {
+border-radius: 0 !important;
+border: 1px solid transparent !important;
+border-color: #fafafaeb transparent transparent !important;
+background: #fafafaeb !important;
+-webkit-box-shadow: 0px 0px 0 0 #fafafaeb !important;
+box-shadow: 0px 0px 0 0 #fafafaeb !important;
+-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+ 
+.ui.left.center.popup:before {
+border-radius: 0 !important;
+border: 1px solid transparent !important;
+border-color: #fafafaeb transparent transparent !important;
+background: #fafafaeb !important;
+-webkit-box-shadow: 0px 0px 0 0 #fafafaeb !important;
+box-shadow: 0px 0px 0 0 #fafafaeb !important;
+-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+ 
+/* 弹出卡片 */
+.status.cards .ui.content.popup {
+min-width: 20rem !important;
+line-height: 2rem !important;
+border-radius: 5px !important;
+border: 1px solid transparent !important;
+background-color: #fafafaeb !important;
+font-family: Arial,Helvetica,sans-serif !important;
+}
+ 
+.ui.content {
+margin: 0 !important;
+padding: 1em !important;
+}
+ 
+/* 服务页 */
+.ui.table {
+background: RGB(225,225,225,0.6) !important;
+}
+ 
+.ui.table thead th {
+background: transparent !important;
+}
+ 
+/* 服务页进度条 */
+.service-status .good {
+background-color: #21ba45 !important;
+}
+ 
+.service-status .danger {
+background-color: red !important;
+}
+ 
+.service-status .warning {
+background-color: orange !important;
+}
+ 
+/* 版权 */
+.ui.inverted.segment, 
+.ui.primary.inverted.segment {
+color: #000 !important;
+font-weight: bold !important;
+background-color: #fafafaa3 !important;
+}
 </style>
-</head>
-<body>
-  <script>
-    //ua检测，这里改成你自己的就行
-    // var ua = navigator.userAgent.toLowerCase();
-    // if (/mobile|android|iphone|phone/i.test(ua)) {
-    //   window.location.href = "你的手机链接"; 
-    // }
-  </script>
-  <!-- 这是加载动画 -->
-    <div class="loading-div">
-      <div class="sk-chase">
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-      </div>
-    </div>
-    <script src='https://sub.tsutsu.cc/public/app.js'></script>
-    <script src='setting/setting.js'></script>
-    <script src='js/jquery.min.js'></script>
-    <script src='https://sub.tsutsu.cc/js/theme.js'></script>
-  <script>
-    document.onreadystatechange = function () {
-      if (document.readyState == "complete") {   
-        document.getElementById("app").style.display = "block"; 
-        $(".sk_chase").hide();
-        $(".loading-div").hide();
-      }
-    }
-  </script>
+ 
+<!--Logo和版权-->
+<script>
+window.onload = function(){
+var avatar=document.querySelector(".item img")
+var footer=document.querySelector("div.is-size-7")
+footer.innerHTML="萌萌的养鸡场"
+footer.style.visibility="visible"
+avatar.src="https://s1.chu0.com/src/img/png/ec/ec271ea39032470ea851fb2305a95997.png?e=1735488000&token=1srnZGLKZ0Aqlz6dk7yF4SkiYf4eP-YrEOdM1sob:k8E302eDQHYCsDX1VaSbVVp6rwA="
+avatar.style.visibility="visible"
+}
+</script>
   
 </body>
 </html>
